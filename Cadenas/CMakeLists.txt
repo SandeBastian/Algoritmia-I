@@ -1,0 +1,20 @@
+cmake_minimum_required(VERSION 4.0)
+project(Cadenas)
+
+set(CMAKE_CXX_STANDARD 20)
+
+add_executable(main main.cpp)
+add_executable(slot1.0 slot1.0.cpp)
+add_executable(slot1.1 slot1.1.cpp)
+add_executable(slot1.2 slot1.2.cpp)
+add_executable(slot2.0 slot2.0.cpp)
+add_executable(slot2.1 slot2.1.cpp)
+add_executable(slot3.0 slot3.0.cpp)
+
+add_executable(cajita1.0 Cajitas/cajita1.0.cpp)
+add_executable(cajita1.1 Cajitas/cajita1.1.cpp)
+add_executable(cajita2.0 Cajitas/cajita2.0.cpp)
+add_executable(cajita3.0 Cajitas/cajita3.0.cpp)
+add_executable(cajita4.0 Cajitas/cajita4.0.cpp)
+add_executable(cajita4.1 Cajitas/cajita4.1.cpp)
+add_executable(cajita4.2 Cajitas/cajita4.2.cpp)
