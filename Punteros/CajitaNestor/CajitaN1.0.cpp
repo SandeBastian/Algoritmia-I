@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-struct Reg {
+struct lego {
     int cod;
     float pt;
 };
@@ -10,10 +10,10 @@ int main () {
 
     int *p; //Variable puntero para enteros
     float *q; //Variable puntero para reales
-    Reg *r1; //Variable puntero para estructuras
+    lego *r1; //Variable puntero para estructuras
     p=new(int);
     q=new(float);
-    r1=new(Reg);
+    r1=new(lego);
 
     cout<<"\nDirecciones de memmoria: "<<endl;
     cout<<"p: "<<p<<endl;
@@ -48,7 +48,7 @@ int main () {
     cout<<"r1->pt: "<<r1->pt<<endl;
 
     //Declara otro puntero tipo structura?????
-    Reg *r2=new(Reg);
+    lego *r2=new(lego);
     r2->cod=333;
     r2->pt=7.3;
     cout<<"\nDe ahora en adelante asi: "<<endl;

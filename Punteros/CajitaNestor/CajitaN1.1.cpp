@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-struct Reg {
+struct lego {
     int cod;
     float pt;
 };
@@ -9,10 +9,10 @@ struct Reg {
 int main () {
     int *p;
     float *q;
-    Reg *r1;
+    lego *r1;
     p=new(int);
     q=new(float);
-    r1=new(Reg);
+    r1=new(lego);
 
     cout<<"\nMemorias 1: "<<endl;
     cout<<"p: "<<p<<endl;
@@ -42,7 +42,7 @@ int main () {
     cout<<"r1->pt: "<<r1->pt<<endl;  //Practica
 
     //Tambien puedes declarar luego mas punteros del tipo struct
-    Reg *r2=new(Reg);
+    lego *r2=new(lego);
     r2->cod=222;
     r2->pt=7.2;
     cout<<"\nValores De Estructura 2: "<<endl;

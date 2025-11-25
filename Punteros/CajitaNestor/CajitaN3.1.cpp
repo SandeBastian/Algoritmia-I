@@ -4,18 +4,18 @@ Nodos ENLAZANDO ESTRUCTURA
 #include <iostream>
 using namespace std;
 
-struct Reg {
+struct lego {
     int cod;
     float pt;
-    Reg *punt;
+    lego *punt;
 };
 
 int main () {
-    Reg *p, *q;
-    p=new(Reg);
-    q=new(Reg);
-    Reg *r;
-    r=new (Reg);
+    lego *p, *q;
+    p=new(lego);
+    q=new(lego);
+    lego *r;
+    r=new (lego);
 
     //Creas p
     p->cod=111;
