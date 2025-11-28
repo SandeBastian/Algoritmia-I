@@ -1,42 +1,61 @@
+/*
+PILAS PILAS PILAS PILAS PILAS:
+Crea una pila usando la siguiente lista de codigos empieza almacenando
+desde el primer elemento x[5]={10,20,30,40,50}
+*/
+
 #include <iostream>
 using namespace std;
 
-int main () {
+int x[5]={10,20,30,40,50}; //Esta aqui afuera del main porque void crea_lista accede a esto
 
-    struct lego {
-        int cod;
-        lego *punt;
-    };
+struct lego {
+    int cod;
+    lego *punt;
+};
 
-    lego *lista;
-    int x[5]={10,20,30,40,50};
+void crea_nodo(lego *&p, int cod) {
+    p=new(lego);
+    p->cod = cod;
+    p->punt = NULL;
+}
+
+lego *lista;
+
+void crea_lista(lego *&p) {
+
     lego *q; //Crea estructura 'q' de tipo puntero
-    lista=NULL; //Hace que el punto 'p' este vacio (no apunta nada)
+    p=NULL; //Hace que el punto 'p' este vacio (no apunta nada)
     for (int i=0; i<5; i++) {
-        if (lista==NULL) {
+        if (p==NULL) {
             //Empieza Nodo 1
-
-            lista=new(lego);
-            lista->cod = x[i];
-            lista->punt = NULL;
+            crea_nodo(p, x[i]);
         }
         else {
             //Continua Nodos y enlaza
-            q=new(lego);
-            q->cod = x[i];
-            q->punt = NULL;
+            crea_nodo(q, x[i]);
             //Enlaza p y q (tecnicamente pone p en q)
-            q->punt = lista;
-            lista=q;
+            q->punt = p;
+            p=q;
             //Luego se pierde q pero p queda en el nodo q que a su vez es generado por
             //el anterior p->punt
         }
         cout<<"q: "<<q->cod<<endl;
     }
+}
+
+void recorre(lego *p) {
     int n=5;
-    while (q!=NULL) {
-        cout<<"Dato ("<<n--<<"): "<<q->cod<<endl;
-        q=q->punt;
+    while (p!=NULL) {
+        cout<<"Dato ("<<n--<<"): "<<p->cod<<endl;
+        p=p->punt;
     }
+}
+
+int main () {
+
+    crea_lista(lista);
+
+    recorre(lista);
     return 0;
 }
