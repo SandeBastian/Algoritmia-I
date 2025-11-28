@@ -34,6 +34,7 @@ add_executable(CajitasN5.1 CajitaNestor/CajitaN5.1.cpp)
 add_executable(CajitasN5.2 CajitaNestor/CajitaN5.2.cpp)
 add_executable(CajitasN6.0 CajitaNestor/CajitaN6.0.cpp)
 add_executable(CajitasN7.0 CajitaNestor/CajitaN7.0.cpp)
+add_executable(CajitasN8.0 CajitaNestor/CajitaN8.0.cpp)
 add_executable(RecursivaN1.0.cpp CajitaNestor/RecursivaN1.0.cpp)
 add_executable(RecursivaN2.0.cpp CajitaNestor/RecursivaN2.0.cpp)
 
