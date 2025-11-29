@@ -1,80 +1,80 @@
 /*
-Ordenamiento de una COLA (FIFO) de estudiantes que tengan datos del Código y
-promedio final
-Codigo  Promedio Final
-111     13.5
-222     08.7
-333     14.5
+Se tiene, ya existe el archivo de texto llamado PROMEDIOS.TXT, el cual contiene
+la siguiente informacion:
+PROMEDIOS.TXT
+Codigo Promedio
+111 12.3
+333 11.4
+555 10.8
+777 14.5
+999 11.4
+Se pide almacenar los datos del archivo en una lista dinamica. Luego presentar la
+lista
 */
 
-#include <iostream>
-using namespace std;
+    #include <iostream>
+    #include <fstream>
+    using namespace std;
 
-struct nodo {
+// Nodo
+struct Nodo {
     int Cod;
-    float Pf;
-    nodo *punt;
+    float pf;
+    Nodo* punt;
 };
 
-nodo *head=NULL;
+// Variable puntero para la lista
+Nodo* lista = NULL;
 
-void crea_nodo (nodo *&p) {
+// Funcion que crea un Nodo
+void Crea_Nodo(Nodo*& p, int Cod, float pf) {
+    if (p == NULL) {
+        p = new Nodo;
+        p->Cod = Cod;
+        p->pf = pf;
+        p->punt = NULL;
+    } else {
+        Crea_Nodo(p->punt, Cod, pf);
+    }
+}
+
+// Funcion que crea la lista
+void Crea_lista(Nodo*& p) {
+    int n = 3;
     int cod;
     float pf;
-    if (p==NULL) {
-        cout<<"Ingresa Cod: "; cin>>cod;
-        cout<<"Ingresa Pf: "; cin>>pf;
-        p=new nodo;
-        p->Cod=cod;
-        p->Pf=pf;
-        p->punt=NULL;
-    }else {
-        crea_nodo(p->punt);
-    }
-}
-
-void crea_lista (nodo *&p) {
-    int n;
-    cout<<"Ingrese la cantidad de datos: "; cin>>n;
-    for (int i=0; i<n; i++) {
-        cout<<"Datos ["<<i+1<<"]: "<<endl;
-        crea_nodo(p);
-    }
-}
-
-void ordena(nodo *p) {
-    nodo *q1, *q2;
-    int auxC;
-    float auxP;
-    q1 = p;
-    while(q1!=NULL){
-        q2 = q1->punt;
-        while(q2!=NULL){
-            if(q1->Pf > q2->Pf){
-                auxC = q1->Cod;
-                q1->Cod = q2->Cod;
-                q2->Cod = auxC;
-
-                auxP = q1->Pf;
-                q1->Pf = q2->Pf;
-                q2->Pf = auxP;
-            }
-            q2 = q2->punt;
+    ifstream ent;
+    ent.open("PROMEDIOS.TXT");
+    if (!ent) {
+        cout << "Error al abrir el archivo." << endl;
+        return;
+    }else{
+        while(ent >> cod >> pf) {
+            Crea_Nodo(p, cod, pf);
         }
-        q1=q1->punt;
+        ent.close();
+    }
+
+
+}
+
+// Funcion que recorre la lista (recursiva)
+void Recorre(Nodo* p) {
+    if (p != NULL) {
+        cout << p->Cod << "\t"<< p->pf << endl;
+        Recorre(p->punt); // Llamada recursiva al siguiente nodo
     }
 }
 
-void recorre (nodo *&p) {
-    if (p!=NULL) {
-        cout<<p->Cod<<"\t"<<p->Pf<<endl;
-        recorre (p->punt);
-    }
-}
+int main() {
+    // Inicializar la lista como NULL
+    lista = NULL;
 
-int main () {
-    crea_lista (head);
-    ordena (head);
-    recorre (head);
+    // Llamando a Crea_lista
+    Crea_lista(lista);
+
+    // Llamando a Recorre
+    Recorre(lista);
+
     return 0;
 }
