@@ -1,80 +1,89 @@
 /*
-Se tiene, ya existe el archivo de texto llamado PROMEDIOS.TXT, el cual contiene
-la siguiente informacion:
-PROMEDIOS.TXT
-Codigo Promedio
-111 12.3
-333 11.4
-555 10.8
-777 14.5
-999 11.4
-Se pide almacenar los datos del archivo en una lista dinamica. Luego presentar la
-lista
+Se tiene, ya existe el archivo de texto llamado PROMEDIOS:TXT, el cual contiene la siguiente informacion:
+--PROMEDIOS.TXT--
+Codigo      Promedio
+111         12.3
+333         11.4
+555         10.8
+777         14.5
+999         11.4
+Se pide almacenar los datos del archivo en una lista dinamica. Luego presentar la lista
+ordenada con respecto al promedio
 */
+#include <iostream>
+#include <fstream>
+using namespace std;
 
-    #include <iostream>
-    #include <fstream>
-    using namespace std;
-
-// Nodo
 struct Nodo {
     int Cod;
-    float pf;
-    Nodo* punt;
+    float Pf;
+    Nodo *punt;
 };
 
-// Variable puntero para la lista
-Nodo* lista = NULL;
+Nodo *lista=NULL;
 
-// Funcion que crea un Nodo
-void Crea_Nodo(Nodo*& p, int Cod, float pf) {
-    if (p == NULL) {
-        p = new Nodo;
-        p->Cod = Cod;
-        p->pf = pf;
+void crea_nodo (Nodo*&p, int cod, float pf) { //Aqui ya entran los datos de archivo
+    if ( p == NULL ) {
+        p=new Nodo;
+        p->Cod = cod;
+        p->Pf = pf;
         p->punt = NULL;
-    } else {
-        Crea_Nodo(p->punt, Cod, pf);
+    }
+    else {
+        crea_nodo(p->punt, cod, pf);
     }
 }
 
-// Funcion que crea la lista
-void Crea_lista(Nodo*& p) {
-    int n = 3;
+void crea_lista (Nodo*&p) {
     int cod;
     float pf;
     ifstream ent;
-    ent.open("PROMEDIOS.TXT");
+    ent.open ( "NOTAS.7.txt");
     if (!ent) {
-        cout << "Error al abrir el archivo." << endl;
-        return;
-    }else{
-        while(ent >> cod >> pf) {
-            Crea_Nodo(p, cod, pf);
+        cout<<"Error al abrir el archivo."<<endl;
+    } else {
+        while (ent>>cod>>pf) {
+            crea_nodo(p, cod, pf);
         }
         ent.close();
     }
-
-
 }
 
-// Funcion que recorre la lista (recursiva)
-void Recorre(Nodo* p) {
-    if (p != NULL) {
-        cout << p->Cod << "\t"<< p->pf << endl;
-        Recorre(p->punt); // Llamada recursiva al siguiente nodo
+void ordena(Nodo *p) {
+    Nodo *q1, *q2;
+    int auxC;
+    float auxP;
+    q1 = p;
+    while(q1!=NULL){
+        q2 = q1->punt;
+        while(q2!=NULL){
+            if(q1->Pf > q2->Pf){
+                auxC = q1->Cod;
+                q1->Cod = q2->Cod;
+                q2->Cod = auxC;
+
+                auxP = q1->Pf;
+                q1->Pf = q2->Pf;
+                q2->Pf = auxP;
+            }
+            q2 = q2->punt;
+        }
+        q1=q1->punt;
+    }
+}
+
+
+void recorre (Nodo *p) {
+    if (p!=NULL) {
+        cout<<p->Cod<<"\t"<<p->Pf<<endl;
+        recorre(p->punt);
     }
 }
 
 int main() {
-    // Inicializar la lista como NULL
     lista = NULL;
-
-    // Llamando a Crea_lista
-    Crea_lista(lista);
-
-    // Llamando a Recorre
-    Recorre(lista);
-
+    crea_lista (lista);
+    ordena(lista);
+    recorre (lista);
     return 0;
 }

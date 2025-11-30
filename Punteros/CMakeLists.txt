@@ -19,6 +19,11 @@ add_executable(Base4.1 Cajita/Base4.1.cpp)
 add_executable(Base5.0 Cajita/Base5.0.cpp)
 add_executable(Base6.0 Cajita/Base6.0.cpp)
 add_executable(Base7.0 Cajita/Base7.0.cpp)
+add_executable(Base8.0 Cajita/Base8.0.cpp)
+add_executable(Base8.1 Cajita/Base8.1.cpp)
+
+add_executable(Tarea1.0 Cajita/Tarea1.0.cpp)
+add_executable(Tarea2.0 Cajita/Tarea2.0.cpp)
 
 add_executable(CajitasN1.0 CajitaNestor/CajitaN1.0.cpp)
 add_executable(CajitasN1.1 CajitaNestor/CajitaN1.1.cpp)

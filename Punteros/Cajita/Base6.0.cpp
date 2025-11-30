@@ -78,3 +78,4 @@ int main () {
     recorre (head);
     return 0;
 }
+//Ahora hacerlo recursiva
