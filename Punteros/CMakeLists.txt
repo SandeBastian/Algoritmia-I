@@ -6,8 +6,15 @@ set(CMAKE_CXX_STANDARD 20)
 add_executable(main main.cpp)
 add_executable(slot1.0 slot1.0.cpp)
 
-add_executable(Base1.0 Cajita/Base1.0.cpp
-        InsertarEliminaS/caso1.0.cpp)
+add_executable(2025.1.pc4.p1 APC3/2025.1.pc4.p1.cpp)
+add_executable(2025.1.pc4.p2 APC3/2025.1.pc4.p2.cpp)
+add_executable(2025.1.pc4.p3 APC3/2025.1.pc4.p3.cpp)
+
+add_executable(p1 APC3/mogollon-sebastian-pc4-p1.cpp)
+add_executable(p2 APC3/mogollon-sebastian-pc4-p2.cpp)
+add_executable(p3 APC3/mogollon-sebastian-pc4-p3.cpp)
+
+add_executable(Base1.0 Cajita/Base1.0.cpp)
 add_executable(Base1.1 Cajita/Base1.1.cpp)
 add_executable(Base1.2 Cajita/Base1.2.cpp)
 add_executable(Base1.3 Cajita/Base1.3.cpp)
@@ -51,7 +58,14 @@ add_executable(CajitaS1.0 CajitaSotelo/CajitaS1.0.cpp)
 add_executable(CajitaS1.1 CajitaSotelo/CajitaS1.1.cpp)
 add_executable(CajitaS2.0 CajitaSotelo/CajitaS2.0.cpp)
 
+add_executable(Caso0.0 InsertarEliminaS/Caso0.0.cpp)
+add_executable(Caso0.1 InsertarEliminaS/Caso0.1.cpp)
 add_executable(Caso1.0 InsertarEliminaS/Caso1.0.cpp)
 add_executable(Caso1.1 InsertarEliminaS/Caso1.1.cpp)
 add_executable(Caso2.0 InsertarEliminaS/Caso2.0.cpp)
 add_executable(Caso3.0 InsertarEliminaS/Caso3.0.cpp)
+add_executable(Caso4.0 InsertarEliminaS/Caso4.0.cpp)
+
+add_executable(Ejemplo1.0 InsertarEliminaS/Ejemplo1.0.cpp)
+add_executable(Ejemplo2.0 InsertarEliminaS/Ejemplo2.0.cpp)
+add_executable(Ejemplo4.0 InsertarEliminaS/Ejemplo4.0.cpp)

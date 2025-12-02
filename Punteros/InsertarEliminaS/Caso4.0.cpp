@@ -30,9 +30,6 @@ void recorre (nodo *&p) {
     }
 }
 
-void creaLista (nodo *&p) {
-
-}
 
 int main () {
     int n;
@@ -73,17 +70,18 @@ int main () {
     }
     recorre(piv);
 
-    //Eliminacion
-    float promEl;
-    cout<<"Ingrese el codigo a eliminar: "; cin>>promEl;
+    //Elmiminacion de 1 elemento
+    float codEl;
+    cout<<"Ingrese el codigo que desea eliminar: "; cin>>codEl;
     ant=NULL;
     act=piv;
     bool yaEsta=false;
     while (act!=NULL) {
-        if (promEl!=act->pf) {
+        if (codEl!=act->pf) {
             ant=act;
             act=act->punt;
-        }else {
+        }
+        else {
             yaEsta=true;
             break;
         }
@@ -99,8 +97,7 @@ int main () {
         }
     }
     else {
-        cout<<"Ese promedio no existe."<<endl;
+        cout<<"Ese promedio no existe"<<endl;
     }
-    recorre(piv);
     return 0;
 }
