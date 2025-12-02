@@ -52,3 +52,6 @@ add_executable(CajitaS1.1 CajitaSotelo/CajitaS1.1.cpp)
 add_executable(CajitaS2.0 CajitaSotelo/CajitaS2.0.cpp)
 
 add_executable(Caso1.0 InsertarEliminaS/Caso1.0.cpp)
+add_executable(Caso1.1 InsertarEliminaS/Caso1.1.cpp)
+add_executable(Caso2.0 InsertarEliminaS/Caso2.0.cpp)
+add_executable(Caso3.0 InsertarEliminaS/Caso3.0.cpp)
