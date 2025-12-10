@@ -1,5 +1,5 @@
 /*
-programa que genere una lista enlazada de enteros. El programa pidei ngresr una lista (desordenada), se debe recorrer la lista e identificar
+Programa que genere una lista enlazada de enteros. El programa pide ingresr una lista (desordenada), se debe recorrer la lista e identificar
 y eliminar todos los nodos que contengan valores duplicados, dejando solo la primera ocurrencia
 lista ingresada: '4'->'1'->2->4->3->1->5
 lista resultante: 4->1->2->3->5
@@ -28,16 +28,30 @@ void creaNodo(nodo *&p) {
     }
 }
 
-void eliminar(nodo *&q2) {
-    nodo *ant, *act;
-    ant=NULL;
-    act=piv;
-    while (act!=q2) {
-        ant=act;
-        act=act->punt;
+void eliminar(nodo *&p, nodo *q2) {
+    if (p == NULL || q2 == NULL) return;
+
+    // caso eliminar cabeza
+    if (p == q2) {
+        nodo *tmp = p;
+        p = p->punt;
+        delete tmp;
+        return;
     }
-    ant->punt=act->punt;
-    delete act;
+
+    nodo *ant = p;
+    nodo *act = p;
+
+    // buscar
+    while (act != NULL && act != q2) {
+        ant = act;
+        act = act->punt;
+    }
+
+    if (act == NULL) return; // no encontrado
+
+    ant->punt = act->punt;
+    delete act;             // solo UNA eliminación
 }
 
 void busqueda(nodo *&p) {
@@ -49,7 +63,7 @@ void busqueda(nodo *&p) {
         while (q2!=NULL) {
             if (q1->num==q2->num) {
                 q3=q2->punt;
-                eliminar(q2);
+                eliminar(p, q2);
                 q2=q3;
             }
             else {
@@ -80,8 +94,10 @@ void recorre (nodo *&p) {
 
 int main () {
     creaLista(piv);
+    cout<<"\nLista igresada: "<<endl;
     recorre(piv);
     busqueda(piv);
+    cout<<"\nLista resultante: "<<endl;
     recorre(piv);
     return 0;
 }

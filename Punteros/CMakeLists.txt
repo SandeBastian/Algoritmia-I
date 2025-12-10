@@ -67,5 +67,7 @@ add_executable(Caso3.0 InsertarEliminaS/Caso3.0.cpp)
 add_executable(Caso4.0 InsertarEliminaS/Caso4.0.cpp)
 
 add_executable(Ejemplo1.0 InsertarEliminaS/Ejemplo1.0.cpp)
+add_executable(Ejemplo1.1 InsertarEliminaS/Ejemplo1.1.cpp)
 add_executable(Ejemplo2.0 InsertarEliminaS/Ejemplo2.0.cpp)
-add_executable(Ejemplo4.0 InsertarEliminaS/Ejemplo4.0.cpp)
+add_executable(Ejemplo2.1 InsertarEliminaS/Ejemplo2.1.cpp)
+add_executable(Ejemplo3.0 InsertarEliminaS/Ejemplo3.0.cpp)

@@ -1,67 +1,77 @@
 #include <iostream>
-#include <time.h>
 using namespace std;
-int main() {
-    int m, n, p;
-    //srand(time(NULL));
-    do {
-        cout<<"Ingrese el numero de jugadores:";
-        cin>>m;
-        if (m<0) cout<<"Error, numero de jugadores invalido."<<endl;
-    }while (m<0);
-    do {
-        cout<<"Ingrese el numero de rondas:";
-        cin>>n;
-        if (n<0) cout<<"Error, numero de rondas invalido."<<endl;
-    }while (n<0);
-    do {
-        cout<<"Ingrese el numero de juegos:";
-        cin>>p;
-        if (p<0) cout<<"Error, numero de juegos invalido."<<endl;
-    }while (p<0);
-    float puntaje[m][n][p];
-    float suma[m]={0};
-    for (int i=0;i<m;i++) {
-        for (int j=0;j<n;j++) {
-            for (int k=0;k<p;k++) {
-                puntaje[i][j][k]=0+rand()%21;
-            }
-        }
-    }
-    for (int i=0;i<m;i++) {
-        for (int j=0;j<n;j++) {
-            for (int k=0;k<p;k++) {
-                suma[i]=suma[i]+puntaje[j][k][i];
-            }
-        }
-    }
 
-    float prom=0;
-    for (int i=0; i<m; i++) {
-        prom=prom+suma[i];
+struct nodo {
+    int cod;
+    nodo *punt;
+};
+
+nodo *piv=NULL;
+
+void recorre (nodo *&p) {
+    if (p!=NULL) {
+        cout<<p->cod<<endl;
+        recorre(p->punt);
     }
-    prom=prom/float(m);
-    for (int i=0;i<m;i++) {
-        //cout<<"\nJugador #"<<i+1<<":"<<endl;
-        for (int j=0;j<n;j++) {
-            for (int k=0;k<p;k++) {
-                //cout<<puntaje[j][k][i]<<"\t";
-            }
-            //cout<<endl;
+}
+
+void buscarCod (nodo *&p,nodo *&act,nodo *&ant, int cod, bool &yaExiste) {
+    while (act!=NULL) {
+        if (cod>act->cod) {
+            ant=act;
+            act=act->punt;
         }
-        if (!(suma[i]<prom-10||suma[i]>prom+10)) {
-            cout<<"\nJugador #"<<i+1<<":"<<endl;
-            cout<<"Puntaje Total: "<<suma[i]<<endl;
-            cout<<"Promedio: "<<prom<<endl;
-            cout<<endl;
+        else {
+            if (cod==act->cod) yaExiste=true;
+            break;
         }
     }
-    int k;
-    cout<<"Solicite el puntaje total de algun jugador: "<<endl;
-    do {
-        cout<<"Jugador #: ";
-        cin>>k;
-    }while (k<0||k>m);
-    cout<<"Puntaje del jugador "<<k+1<<": "<<suma[k]<<endl;
+}
+
+void creaNodo (nodo *&p, int cod) {
+    p=new nodo;
+    p->cod=cod;
+    p->punt=NULL;
+}
+
+void evaluaCod (nodo *&p) {
+    int cod;
+    nodo *act=p;
+    nodo *ant=NULL;
+    nodo *ins=NULL;
+
+    cout<<"Ingrese el codigo: "; cin>>cod;
+
+    bool yaExiste=false;
+
+    buscarCod( *&p, *&act, *&ant, cod, yaExiste);
+
+    if (!yaExiste) {
+        creaNodo (ins, cod);
+        if (act==p) {
+            p=ins;
+            ins->punt=act;
+        }
+        else {
+            ant->punt=ins;
+            ins->punt=act;
+        }
+    }else {
+        cout<<"El codigo ya existe"<<endl;
+    }
+}
+
+void creaLista (nodo *&p) {
+    int n;
+    cout<<"Ingrese la cantidad de Datos: "; cin>>n;
+    for (int i=0; i<n; i++) {
+        cout<<"Ingrese Datos ["<<i+1<<"]: "<<endl;
+        evaluaCod(p);
+    }
+}
+
+int main () {
+    creaLista(piv);
+    recorre(piv);
     return 0;
 }

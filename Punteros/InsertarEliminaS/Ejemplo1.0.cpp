@@ -19,7 +19,7 @@ struct nodo{
 
 nodo *piv;
 
-void creaNodo (nodo *&p, int cod);
+void creaNodo (nodo *&p, int cod, float pf);
 
 void creaLista (nodo *&p);
 

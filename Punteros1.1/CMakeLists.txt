@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 4.0)
+project(Punteros1_1)
+
+set(CMAKE_CXX_STANDARD 20)
+
+add_executable(main main.cpp)
+add_executable(Ejemplo1.0 Seminario/Ejemplo1.0.cpp)
+add_executable(Ejemplo2.0 Seminario/Ejemplo2.0.cpp)
+add_executable(Ejemplo3.0 Seminario/Ejemplo3.0.cpp)
+add_executable(Ejemplo4.0 Seminario/Ejemplo4.0.cpp)
+add_executable(Ejemplo5.0 Seminario/Ejemplo5.0.cpp)
