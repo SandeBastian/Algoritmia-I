@@ -10,6 +10,9 @@ P(x)= 6x^5+3x^4+5x^3-2x^2-6x
 */
 #include <iostream>
 using namespace std;
+
+
+
 int main () {
 
 }
