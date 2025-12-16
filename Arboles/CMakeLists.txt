@@ -3,6 +3,7 @@ project(Arboles)
 
 set(CMAKE_CXX_STANDARD 20)
 
+add_executable(main main.cpp)
 add_executable(Funca Funca.cpp)
 add_executable(Ejemplo1.0 Ejemplos/Ejemplo1.0.cpp)
 add_executable(Ejemplo2.0 Ejemplos/Ejemplo2.0.cpp)

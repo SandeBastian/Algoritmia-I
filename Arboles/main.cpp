@@ -60,7 +60,7 @@ void ordenar(nodo *p) {
 int main() {
     ifstream f("PLAYAS.TXT");
     if (!f) {
-        cout<<"Error al abrir PLAYAS.TXT"<< endl;
+        cout << "Error al abrir PLAYAS.TXT" << endl;
         return 0;
     }
 
