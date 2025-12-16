@@ -15,7 +15,7 @@ using namespace std;
 
 struct reg {
     int cod;
-    int num;
+    int nota;
 };
 
 int main () {
@@ -27,7 +27,7 @@ int main () {
     }
     else {
         while (f.read((char*)&r,sizeof(reg))) {
-            cout<<r.cod<<"\t"<<r.num<<endl;
+            cout<<r.cod<<"\t"<<r.nota<<endl;
         }
         f.close();
     }

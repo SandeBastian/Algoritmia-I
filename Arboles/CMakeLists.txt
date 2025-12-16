@@ -3,7 +3,7 @@ project(Arboles)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(main main.cpp)
+add_executable(Funca Funca.cpp)
 add_executable(Ejemplo1.0 Ejemplos/Ejemplo1.0.cpp)
 add_executable(Ejemplo2.0 Ejemplos/Ejemplo2.0.cpp)
 add_executable(Ejemplo3.0 Ejemplos/Ejemplo3.0.cpp)
@@ -22,3 +22,13 @@ add_executable(Slot6.F Seminario/Slot6.F.cpp)
 add_executable(Slot6.I Seminario/Slot6.I.cpp)
 add_executable(Slot6.R1 Seminario/Slot6.R1.cpp)
 add_executable(Slot6.R2 Seminario/Slot6.R2.cpp)
+
+add_executable(2025.I.P1 Z.Final/2025.I.P1.cpp)
+add_executable(2025.I.P1.1 Z.Final/2025.I.P1.1.cpp)
+
+add_executable(2025.I.P2 Z.Final/2025.I.P2.cpp)
+
+add_executable(EF_242_P1 Z.Final/EF_242_P1.cpp)
+add_executable(EF_251_P1 Z.Final/EF_251_P1.cpp)
+add_executable(EF_251_P2 Z.Final/EF_251_P2.cpp)
+add_executable(EF_251_P3 Z.Final/EF_251_P3.cpp)

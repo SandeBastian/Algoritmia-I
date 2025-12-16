@@ -15,7 +15,7 @@ using namespace std;
 
 struct reg {
     int cod;
-    int num;
+    int nota;
 };
 
 int main () {
@@ -31,7 +31,7 @@ int main () {
         cin>>n;
         for (int i=0; i<n; i++) {
             cout<<"Ingrese cod["<<i+1<<"]: "; cin>>r.cod;
-            cout<<"Ingrese num["<<i+1<<"]: "; cin>>r.num;
+            cout<<"Ingrese num["<<i+1<<"]: "; cin>>r.nota;
             f.write((char*)&r, sizeof(reg));
         }
         f.close();

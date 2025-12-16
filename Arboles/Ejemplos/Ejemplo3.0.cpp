@@ -32,7 +32,7 @@ struct nodo {
 
 struct reg {
     int cod;
-    int num;
+    int nota;
 };
 
 nodo *piv=NULL;
@@ -79,7 +79,7 @@ void creaLista (nodo *&p) {
     }
     else {
         while (f.read((char*)&r,sizeof(r))) {
-            creaNodo(p,r.cod,r.num);
+            creaNodo(p,r.cod,r.nota);
         }
         f.close();
     }
