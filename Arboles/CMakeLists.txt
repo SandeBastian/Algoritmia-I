@@ -25,6 +25,9 @@ add_executable(Slot6.R2 Seminario/Slot6.R2.cpp)
 
 add_executable(2025.I.P1 Z.Final/2025.I.P1.cpp)
 add_executable(2025.I.P1.1 Z.Final/2025.I.P1.1.cpp)
+add_executable(p1 Z.Final/mogollon-sebastian-ef-p1.cpp)
+add_executable(p2 Z.Final/mogollon-sebastian-ef-p2.cpp)
+add_executable(p3 Z.Final/mogollon-sebastian-ef-p3.cpp)
 
 add_executable(2025.I.P2 Z.Final/2025.I.P2.cpp)
 
