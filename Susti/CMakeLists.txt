@@ -1,0 +1,41 @@
+cmake_minimum_required(VERSION 4.0)
+project(Susti)
+
+set(CMAKE_CXX_STANDARD 20)
+
+add_executable(main main.cpp)
+
+add_executable(Buqueda Archivos/Busqueda1.0.cpp)
+add_executable(DobleLista Archivos/DobleLista.cpp)
+add_executable(CreaReg Archivos/DOT_CREA_REG.cpp)
+add_executable(Final Archivos/DOT_Final.cpp)
+add_executable(LectInd Archivos/DOT_Lect_Ind.cpp)
+add_executable(LeeREg Archivos/DOT_LEE_REG.cpp)
+add_executable(seek Archivos/DOT_seek.cpp)
+add_executable(Lectura2TXT Archivos/Lectura2TXT.cpp)
+add_executable(Polinomio Archivos/Polinomio.cpp)
+
+add_executable(Ejemplo1.0 Ejemplos/Ejemplo1.0.cpp)
+add_executable(Ejemplo2.0 Ejemplos/Ejemplo2.0.cpp)
+add_executable(Ejemplo3.0 Ejemplos/Ejemplo3.0.cpp)
+add_executable(Ejemplo3.0.C1.1 Ejemplos/Ejemplo3.0.C1.1.cpp)
+add_executable(Ejemplo3.0.C1.2 Ejemplos/Ejemplo3.0.C1.2.cpp)
+add_executable(Ejemplo4.0 Ejemplos/Ejemplo4.0.cpp)
+add_executable(Ejemplo4.1 Ejemplos/Ejemplo4.1.cpp)
+
+add_executable(p1 Indicio/mogollon-sebastian-ef-p1.cpp)
+add_executable(p2 Indicio/mogollon-sebastian-ef-p2.cpp)
+add_executable(p3 Indicio/mogollon-sebastian-ef-p3.cpp)
+
+add_executable(2025.I.P1 Indicio/2025.I.P1.cpp)
+add_executable(2025.I.P1.1 Indicio/2025.I.P1.1.cpp)
+add_executable(2025.I.P2  Indicio/2025.I.P2.cpp)
+add_executable(2025.I.P2.1 Indicio/2025.I.P2.1.cpp)
+add_executable(2025.I.P3 Indicio/2025.I.P3.cpp)
+add_executable(2025.I.P3.1 Indicio/2025.I.P3.1.cpp)
+add_executable(2025.I.P3.2 Indicio/2025.I.P3.2.cpp)
+
+add_executable(EF_242_P1 Indicio/EF_242_P1.cpp)
+add_executable(EF_251_P1 Indicio/EF_251_P1.cpp)
+add_executable(EF_251_P2 Indicio/EF_251_P2.cpp)
+add_executable(EF_251_P3 Indicio/EF_251_P3.cpp)
