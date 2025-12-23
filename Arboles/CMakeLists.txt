@@ -24,13 +24,18 @@ add_executable(Slot6.I Seminario/Slot6.I.cpp)
 add_executable(Slot6.R1 Seminario/Slot6.R1.cpp)
 add_executable(Slot6.R2 Seminario/Slot6.R2.cpp)
 
-add_executable(2025.I.P1 Z.Final/2025.I.P1.cpp)
-add_executable(2025.I.P1.1 Z.Final/2025.I.P1.1.cpp)
+
 add_executable(p1 Z.Final/mogollon-sebastian-ef-p1.cpp)
 add_executable(p2 Z.Final/mogollon-sebastian-ef-p2.cpp)
 add_executable(p3 Z.Final/mogollon-sebastian-ef-p3.cpp)
 
+add_executable(2025.I.P1 Z.Final/2025.I.P1.cpp)
+add_executable(2025.I.P1.1 Z.Final/2025.I.P1.1.cpp)
 add_executable(2025.I.P2 Z.Final/2025.I.P2.cpp)
+add_executable(2025.I.P2.1 Z.Final/2025.I.P2.1.cpp)
+add_executable(2025.I.P3 Z.Final/2025.I.P3.cpp)
+add_executable(2025.I.P3.1 Z.Final/2025.I.P3.1.cpp)
+add_executable(2025.I.P3.2 Z.Final/2025.I.P3.2.cpp)
 
 add_executable(EF_242_P1 Z.Final/EF_242_P1.cpp)
 add_executable(EF_251_P1 Z.Final/EF_251_P1.cpp)

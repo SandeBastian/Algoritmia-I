@@ -25,10 +25,31 @@ La suma de los cuadrados de los elemtnos internos impares = 4845
 
 */
 #include <iostream>
-#include <cmath>
-#include <cstdlib>
 #include <ctime>
 using namespace std;
+
+bool esCuadrado (int n) {
+    int raiz=0;
+    while (raiz*raiz<n) raiz++;
+    return raiz*raiz==n;
+}
+
+int raiz (int n) {
+    int raiz=0;
+    while (raiz*raiz<n) raiz++;
+    return raiz;
+}
+
+bool esCuadradoRolly (int n) {
+    int raiz=0;
+    while (raiz*raiz<n) raiz++;
+    return raiz*raiz==n;
+}
+
+int valAbs (int n){
+    if (n<0) return -n;
+    return n;
+}
 
 int main () {
     srand(time(NULL));
@@ -59,18 +80,20 @@ int main () {
 
     for (int i=0;i<n;i++){
         for (int j=0;j<n;j++){
-            int d = abs(i-c) + abs(j-c);
-
-            if (d > c) {                 // EXTERIOR (sin rombo)
-                int r = sqrt(mat[i][j]);
-                if (r*r == mat[i][j])
-                    sumaExt += r;
+           int dif=valAbs(i-c)+valAbs(j-c);
+            //Externa
+            if (dif>c) {
+                cout<<mat[i][j]<<endl;
+                if (esCuadrado(mat[i][j])) {
+                    sumaExt += raiz(mat[i][j]);
+                }
             }
-            else if (d < c) {            // INTERIOR (sin rombo)
-                if (mat[i][j] % 2 != 0)
-                    sumaInt += mat[i][j] * mat[i][j];
+            //Interna
+            if (dif<c) {
+                if (mat[i][j]%2!=0) {
+                    sumaInt += mat[i][j]*mat[i][j];
+                }
             }
-            // d == c  → rombo → NO SE USA
         }
     }
 

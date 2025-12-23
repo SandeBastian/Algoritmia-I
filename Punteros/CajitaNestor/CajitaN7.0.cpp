@@ -70,7 +70,6 @@ void Ordena(Nodo *p) {
         q1=q1->punt;
     }
 
-}
 
 
 int main(){
